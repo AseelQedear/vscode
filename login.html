@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="indexcass.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="split-screen">
+      <!-- Left Section: Video and Form -->
+      <div class="left-section">
+        <video autoplay muted loop id="welcomeVideo">
+          <source src="media/background1.mp4" type="video/mp4" />
+        </video>
+        <div class="content">
+          <div id="error" class="alert" style="display: none">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <p></p>
+          </div>
+
+          <section id="login">
+            <div class="login">
+              <h3>تسجيل الدخول</h3>
+              <form id="login-form" onsubmit="validateLogin(event)">
+                <label for="email"><b>البريد الإلكتروني</b></label>
+                <input type="email" placeholder="yourname@example.com" name="email" id="email" required />
+                <br />
+                <label for="pass"><b>كلمة المرور</b></label>
+                <input type="password" placeholder="أدخل كلمة المرور" name="pass" id="pass" required />
+                <br />
+
+                <div class="checkbox">
+                  <label for="rememberMe">تذكرني</label>
+                  <input type="checkbox" value="lsRememberMe" id="rememberMe" />
+                </div>
+
+                <button type="submit" class="loginbutton">تسجيل الدخول</button>
+              </form>
+
+              <div class="divider">
+                <hr class="hr-1" />
+                <span class="or-text">أو</span>
+                <hr class="hr-2" />
+              </div>
+              <div class="button-container">
+                <button type="submit" class="google-btn">
+                  <img src="media/google.png" alt="Google" class="btn-icon" /> تسجيل باستخدام جوجل
+                </button>
+                <button type="submit" class="apple-btn">
+                  <img src="media/apple.png" alt="Apple" class="btn-icon" /> تسجيل باستخدام ابل
+                </button>
+              </div>
+            </div>
+            <p>ليس لديك حساب؟ <a href="#" id="back-to-signup">انشاء حساب</a></p>
+          </section>
+        </div>
+      </div>
+
+      <!-- Right Section: Background Image and Logo -->
+      <div class="right-section">
+        <div class="background-image">
+          <img src="media\image-removebg-preview.png" alt="logo" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+          // If the user is already logged in, redirect them to the home page
+          if (loggedInUser) {
+              window.location.href = "/index.html";
+          }
+      });
+  </script>
+  
+  </body>
+</html>

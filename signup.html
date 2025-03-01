@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>تسجيل مستخدم جديد</title>
+    <link rel="stylesheet" href="indexcass.css" />
+    <script src="main.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+  </head>
+  <body>
+    <div class="split-screen">
+      <!-- Left Section: Video and Form -->
+      <div class="left-section">
+        <video autoplay muted loop id="welcomeVideo">
+          <source src="media/background1.mp4" type="video/mp4" />
+        </video>
+
+        
+        <div class="content">
+          <div class="container-fluid">
+          <div id="error" class="alert" style="display: none">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            <p></p>
+          </div>
+        </div>
+
+          <section id="signup">
+            <div class="signup">
+              <h3>تسجيل مستخدم جديد</h3>
+              <form id="form" onsubmit="validateSignup(event)">
+                <label for="firstname"><b>الاسم الأول</b></label>
+                <input
+                  type="text"
+                  placeholder="أدخل الاسم الأول"
+                  name="firstname"
+                  id="firstname"
+                  required
+                />
+                <br />
+                <label for="lastname"><b>الاسم الأخير</b></label>
+                <input
+                  type="text"
+                  placeholder="أدخل الاسم الأخير"
+                  name="lastname"
+                  id="lastname"
+                  required
+                />
+                <br />
+                <label for="useremail"><b>البريد الإلكتروني</b></label>
+                <input
+                  type="email"
+                  placeholder="yourname@example.com"
+                  name="useremail"
+                  id="useremail"
+                  oninput="validateEmail()"
+                  required
+                />
+                <br />
+                <label for="password"><b>كلمة المرور</b></label>
+                <input
+                  type="password"
+                  placeholder="أدخل كلمة المرور"
+                  name="password"
+                  id="password"
+                  required
+                />
+                <br />
+                <label for="confirmpassword"><b>تأكيد كلمة المرور</b></label>
+                <input
+                  type="password"
+                  placeholder="تأكيد كلمة المرور"
+                  name="confirmpassword"
+                  id="confirmpassword"
+                  required
+                />
+                <br />
+                <button type="submit" class="signupbutton">تسجيل</button>
+              </form>
+
+              <div class="divider">
+                <hr class="hr-1" />
+                <span class="or-text">أو</span>
+                <hr class="hr-2" />
+              </div>
+
+              <div class="button-container">
+                <button type="submit" class="google-btn">
+                  <img src="media/google.png" alt="Google" class="btn-icon" />
+                  تسجيل باستخدام جوجل
+                </button>
+                <button type="submit" class="apple-btn">
+                  <img src="media/apple.png" alt="Apple" class="btn-icon" />
+                  تسجيل باستخدام ابل
+                </button>
+              </div>
+
+              <div class="loginlink">
+                <p>لديك حساب؟ <a href="#" id="login-link">تسجيل الدخول</a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Right Section: Background Image -->
+      <div class="right-section">
+        <div class="background-image">
+          <img src="media\image-removebg-preview.png" alt="logo" />
+        </div>
+      </div>
+    </div>
+    <!-- 
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+          // If the user is already logged in, redirect them to the home page
+          if (!loggedInUser) {
+              window.location.href = "/signup.html";
+          }
+      });
+  </script> -->
+  </body>
+</html>
+

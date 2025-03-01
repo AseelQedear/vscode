@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ترحيب</title>
+    <link rel="stylesheet" href="indexcass.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <video
+      autoplay
+      muted
+      loop
+      id="welcomeVideo"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      "
+    >
+      <source src="media/background1.mp4" type="video/mp4" />
+    </video>
+
+    <section class="welcome">
+      <h1>مرحبًا</h1>
+      <div class="join">
+        <a href="#" id="join-link" class="button">انضم هنا</a>
+      </div>
+    </section>
+
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        // If the user is not logged in, redirect them to the login page
+        if (!loggedInUser) {
+          window.location.href = "/login.html";
+        }
+      });
+    </script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const joinLink = document.getElementById("join-link");
+
+        if (joinLink) {
+          joinLink.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            // Remove the loggedInUser from localStorage
+            localStorage.removeItem("loggedInUser");
+
+            // // Redirect the user to the login page
+            // window.location.href = "/login.html";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
